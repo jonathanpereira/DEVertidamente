@@ -203,5 +203,13 @@ Este projeto é uma forma de acompanhar minha saúde emocional ao longo do tempo
     
     print("✅ README.md e grafico.svg atualizados!")
 
+    # Mostrar sentimento do dia atual, se houver
+    hoje = datetime.now().strftime("%Y-%m-%d")
+    if hoje in registro:
+        sentimento = registro[hoje]['sentimento']
+        emoji = sentimentos[sentimento]['emoji']
+        print(f"Mensagem de commit sugerida:")
+        print(f"Sentimento do dia: {emoji} {sentimento.capitalize()}")
+    
 if __name__ == "__main__":
     atualizar_readme()
